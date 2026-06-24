@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/roshni050428/jenkins-demo.git'
+            }
+        }
+        stage('Compile Code') {
+            steps {
+                bat 'javac demo.java'
+            }
+        }
+        stage('Run Code') {
+            steps {
+                bat 'javac demo'
+            }
+        }
+    }
+}
